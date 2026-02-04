@@ -1,7 +1,43 @@
-.card {
-  background: #e0e0e0;
+.card-timer {
   padding: 16px;
   border-radius: 8px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--second);
+  color: #fff;
+}
+
+.form-row {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.form-row input {
+  flex: 3;
+  height: 45px;
+  width: 100%;
+  border-radius: 0.7rem;
+  border: none;
+  padding: 0.7rem;
+}
+
+.form-row select {
+  flex: 1;
+  height: 45px;
+  border-radius: 0.7rem;
+  border: none;
+  padding: 0.5rem;
+}
+
+button {
+  width: 150px;
+  background-color: var(--primary);
+
 }
 
 .timer .time {
