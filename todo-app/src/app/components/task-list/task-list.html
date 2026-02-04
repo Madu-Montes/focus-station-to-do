@@ -1,4 +1,16 @@
 <section class="card">
   <h2>To-do List</h2>
-  <p>No tasks yet</p>
+
+  @if (taskService.tasks().length === 0) {
+    <p>No tasks yet</p>
+  }
+
+  <ul>
+    @for (task of taskService.tasks(); track task.id) {
+      <li>
+        <strong>{{ task.title }}</strong>
+        <span>({{ task.priority }})</span>
+      </li>
+    }
+  </ul>
 </section>
