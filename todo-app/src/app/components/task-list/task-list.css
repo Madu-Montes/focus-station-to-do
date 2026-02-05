@@ -1,7 +1,8 @@
 .card {
-  background: #e0e0e0;
-  padding: 16px;
+  background: var(--secondary);
+  padding: 16px 2rem;
   border-radius: 8px;
+  height: 80vh;
 }
 
 .timer .time {
@@ -9,4 +10,77 @@
   display: block;
   text-align: center;
   margin: 16px 0;
+}
+
+h2{
+  margin-bottom: 1rem;
+}
+
+.task {
+  background-color: var(--primary);
+  color: var(--secondary);
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.content strong {
+  font-size: 1rem;
+}
+
+.priority {
+  font-size: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.5rem;
+  width: fit-content;
+  text-transform: capitalize;
+}
+
+.priority.high {
+  background: #ff4d4f;
+}
+
+.priority.medium {
+  background: #faad14;
+}
+
+.priority.low {
+  background: #52c41a;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+button {
+  background-color: var(--secondary);
+  color: var(--primary);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0.85;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+  opacity: 1;
+  transform: scale(1.05);
 }

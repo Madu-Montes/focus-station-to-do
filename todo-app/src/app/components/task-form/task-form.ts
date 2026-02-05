@@ -11,18 +11,18 @@ import { TaskService } from '../../services/task.service';
 })
 export class TaskForm {
   title = '';
-priority: 'high' | 'medium' | 'low' = 'medium';
+  priority: 'high' | 'medium' | 'low' = 'medium';
 
-constructor(private taskService: TaskService) {}
+  constructor(private taskService: TaskService) {}
 
-addTask() {
-  if (!this.title.trim()) return;
+  addTask() {
+    if (!this.title.trim()) return;
 
-  this.taskService.addTask(this.title, this.priority);
+    this.taskService.addTask(this.title, this.priority);
 
-  this.title = '';
-  this.priority = 'medium';
-}
+    this.title = '';
+    this.priority = 'medium';
 
-
+    console.log("teste")
+  }
 }

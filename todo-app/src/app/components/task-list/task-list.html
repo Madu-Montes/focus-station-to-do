@@ -2,15 +2,46 @@
   <h2>To-do List</h2>
 
   @if (taskService.tasks().length === 0) {
-    <p>No tasks yet</p>
+  <p>No tasks yet</p>
   }
 
   <ul>
     @for (task of taskService.tasks(); track task.id) {
-      <li>
+    <li class="task">
+      @if (editingTaskId === task.id) {
+      <div class="edit-mode">
+        <input [(ngModel)]="editTitle" />
+
+        <select [(ngModel)]="editPriority">
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+
+        <div class="actions">
+          <button class="save" (click)="saveEdit()">✔</button>
+          <button class="cancel" (click)="cancelEdit()">✖</button>
+        </div>
+      </div>
+      } @else {
+      <div class="content">
         <strong>{{ task.title }}</strong>
-        <span>({{ task.priority }})</span>
-      </li>
+        <span class="priority {{ task.priority }}">
+          {{ task.priority }}
+        </span>
+      </div>
+
+      <div class="actions">
+        <button (click)="startEdit(task)">
+          <i class="ph ph-pencil-simple"></i>
+        </button>
+        <button (click)="deleteTask(task.id)">
+          <i class="ph ph-trash"></i>
+        </button>
+      </div>
+      }
+    </li>
+
     }
   </ul>
 </section>

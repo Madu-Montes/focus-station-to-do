@@ -1,6 +1,6 @@
 :root {
   --primary: #FCECCF;
-  --second: #442d1d ;
+  --secondary: #442d1d ;
 }
 
 *{
@@ -11,6 +11,7 @@
 
 body{
   background-color: var(--primary);
+  color: #FCECCF;
   display: flex;
   width: 100vw;
   height: 100vh;
