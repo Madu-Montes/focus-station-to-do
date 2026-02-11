@@ -1,9 +1,10 @@
 <section class="card timer">
   <h2>Pomodoro</h2>
-  <span class="time">30:00</span>
+  <span class="time">{{ formattedTime() }}
+  </span>
   <div class="controls">
-    <button>Play</button>
-    <button>Pause</button>
-    <button>Reset</button>
+    <button (click)="startTimer()"><i class="ph ph-play"></i></button>
+    <button (click)="pauseTimer()"><i class="ph ph-pause"></i></button>
+    <button (click)="resetTimer()"><i class="ph ph-repeat"></i></button>
   </div>
 </section>
